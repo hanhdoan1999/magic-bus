@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/NewFile.html=UTF-8
+encoding//src/messageResources.properties=UTF-8
+encoding//src/servlet/CapNhatBenDoThanhCongServlet.java=UTF-8
+encoding//src/servlet/DangKiBusThanhCongServlet.java=UTF-8

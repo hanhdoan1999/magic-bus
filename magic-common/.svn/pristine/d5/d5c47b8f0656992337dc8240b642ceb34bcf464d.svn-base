@@ -1,0 +1,69 @@
+CREATE SEQUENCE id_hoi_vien_seq;
+create table dat_lich (
+ id_hoi_vien VARCHAR(4) not null default nextval('id_hoi_vien_seq')
+ , id_tuyen_duong VARCHAR(4) not null
+ , so_ghe INT
+ , constraint dat_lich_PKC primary key (id_hoi_vien,id_tuyen_duong)
+) ;
+
+-- Quáº£n lÃ½ váº­n hÃ nh
+--* RestoreFromTempTable
+CREATE SEQUENCE id_quan_ly;
+create table quan_ly_van_hanh (
+ id_quan_ly VARCHAR(4) not null default nextval('id_quan_ly')
+ , ho_ten_admin VARCHAR(50)
+ , mat_khau VARCHAR(20)
+ , constraint quan_ly_van_hanh_PKC primary key (id_quan_ly)
+) ;
+
+-- Bus
+--* RestoreFromTempTable
+CREATE SEQUENCE id_bus;
+create table bus (
+ id_bus VARCHAR(4) not null default nextval('id_bus')
+ , so_hang INT
+ , so_ghe_moi_hang INT
+ , ki_hieu_dia_phuong VARCHAR(10)
+ , bien_so_dang_ki VARCHAR(10)
+ , so_thu_tu_dang_ki INT
+ , thoi_gian_khoi_hanh TIME
+ , thoi_gian_du_kien_den TIME
+ , constraint bus_PKC primary key (id_bus)
+) ;
+
+-- Há»™i ViÃªn
+--* RestoreFromTempTable
+CREATE SEQUENCE id_hoi_vien;
+create table hoi_vien (
+ id_hoi_vien VARCHAR(4) not null default nextval('id_hoi_vien')
+ , ho_ten VARCHAR(50)
+ , mat_khau VARCHAR(20)
+ , so_dien_thoai INT
+ , email VARCHAR(30)
+ , constraint hoi_vien_PKC primary key (id_hoi_vien)
+) ;
+
+-- tuyáº¿n Ä‘Æ°á»�ng
+--* RestoreFromTempTable
+CREATE SEQUENCE id_tuyen_duong;
+create table tuyen_duong (
+ id_tuyen_duong VARCHAR(4) not null default nextval('id_tuyen_duong')
+ , id_diem_di VARCHAR(4)
+ , id_diem_den VARCHAR(4)
+ , gia_cuoc INT
+ , id_bus VARCHAR(4)
+ , ngay_bat_dau_hoat_dong DATE
+ , ngay_ket_thuc_hoat_dong DATE
+ , constraint tuyen_duong_PKC primary key (id_tuyen_duong)
+) ;
+
+-- Báº¿n Ä‘á»— xe bus
+--* RestoreFromTempTable
+CREATE SEQUENCE id_ben;
+create table ben_do (
+ id_ben VARCHAR(4) not null default nextval('id_diem_di')
+
+ , tinh_thanh VARCHAR(50) not null
+ 
+ , constraint bus_place_PKC primary key (id_diem_di,id_diem_den)
+) ;

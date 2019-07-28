@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+C:\magic\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1109881493.index
+\magic-frontend\src
+C:\magic\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3441237652.index
+\magic-frontend\src
+C:\magic\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\322689379.index
+\magic-frontend\src
+C:\magic\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3013695043.index
+\magic-backoffice\src
+C:\magic\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3229834771.index
+\magic-backoffice\src

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.4.0//EN"
+     "http://commons.apache.org/dtds/validator_1_4_0.dtd">
+<form-validation>
+	<global>
+		<validator name="required" classname="validator.action.GenericValidatorImpl"
+			method="validateRequired" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="error.required" />
+		<validator name="maxlength" classname="validator.action.GenericValidatorImpl"
+			method="validateMaxLength" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="error.maxlength" />
+		<validator name="mask" classname="validator.action.GenericValidatorImpl"
+			method="validateMask" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="error.mask" />
+		<validator name="email" classname="validator.action.GenericValidatorImpl"
+			method="validateEmail" methodParams="java.lang.Object,org.apache.commons.validator.Field"
+			msg="error.email" />
+
+	</global>
+	<formset>
+		<form name="form.MemberForm">
+
+			<field property="lastName" depends="required,maxlength">
+				<arg position="0" key="display.lastName" resource="true" />
+				<arg position="1" key="20" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="firstName" depends="required,maxlength">
+				<arg position="0" key="display.firstName" resource="true" />
+				<arg position="1" key="20" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="address" depends="maxlength">
+				<arg position="0" key="display.address" resource="true" />
+				<arg position="1" key="200" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field property="telNo" depends="maxlength">
+				<arg position="0" key="display.telNo" resource="true" />
+				<arg position="1" key="13" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>13</var-value>
+				</var>
+			</field>
+
+			<field property="mailAddress" depends="required,email,maxlength">
+				<arg position="0" key="display.mailAddress" resource="true" />
+				<arg position="1" key="200" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field property="postCode" depends="mask">
+				<arg position="0" key="display.postCode" resource="true" />
+				<arg position="1" key="XXX-XXXX(Xは数値)" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[0-9]{3}-[0-9]{4}</var-value>
+				</var>
+			</field>
+			<field property="birthdayYear" depends="mask">
+				<arg position="0" key="display.birthdayYear" resource="true" />
+				<arg position="1" key="1900～2999" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>[1-2][0-9]{3}</var-value>
+				</var>
+			</field>
+
+		</form>
+	</formset>
+	
+	
+	<formset>
+		<form name="form.HoiVienForm">
+			<field property="idHoiVien" depends="required,maxlength">
+				<arg position="0" key="display.idHoiVien" resource="true" />
+				<arg position="1" key="10" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+			<field property="hoTen" depends="required,maxlength">
+				<arg position="0" key="display.hoTen" resource="true" />
+				<arg position="1" key="50" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+				<field property="matKhau" depends="required,maxlength">
+				<arg position="0" key="display.matKhau" resource="true" />
+				<arg position="1" key="20" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+				<field property="matKhauXacNhan" depends="required,maxlength">
+				<arg position="0" key="display.matKhauXacNhan" resource="true" />
+				<arg position="1" key="20" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field property="soDienThoai" depends="required,maxlength">
+				<arg position="0" key="display.soDienThoai" resource="true" />
+				<arg position="1" key="13" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>13</var-value>
+				</var>
+			</field>
+			<field property="email"
+				depends="required,email,maxlength">
+				<arg position="0" key="display.email" resource="true" />
+				<arg position="1" key="30" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>30</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+</form-validation>
